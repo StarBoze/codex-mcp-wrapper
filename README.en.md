@@ -121,7 +121,7 @@ cat <<EOS > .env
 OPENAI_API_KEY=sk-...
 JWT_SECRET=mywrappersecret
 STORAGE_DRIVER=redis       # redis or sqlite
-REDIS_URL=redis://localhost:6380
+REDIS_URL=redis://localhost:6379
 SQLITE_DB=./wrapper.sqlite
 RATE_LIMIT_RPM=60
 EOS
