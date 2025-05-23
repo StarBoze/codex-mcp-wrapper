@@ -229,7 +229,7 @@ export class WorkerService implements OnModuleInit {
             exitCode: code
           });
         }
-        resolve(code);
+        resolve(code ?? 0);
       });
     });
   }

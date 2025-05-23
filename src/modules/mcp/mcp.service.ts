@@ -93,7 +93,7 @@ export class McpService {
       this.logger.error(`Failed to load capabilities from ${file}: ${err.message}`);
       this.capabilities = [];
     }
-    return this.capabilities;
+    return this.capabilities || [];
   }
 
   private handleListTools(message: McpRequest): any {
