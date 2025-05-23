@@ -73,15 +73,15 @@ BullMQ のジョブキュー — Codex CLI 実行を非同期ワーカーにオ�
 ## 2. ソース取得
 
 ```bash
-git clone https://github.com/StarBoze/codex-mcp.git
-cd codex-mcp
+git clone https://github.com/StarBoze/codex-mcp-wrapper.git
+cd codex-mcp-wrapper
 ```
 
 ### GitHub ショートハンドで起動
 
 ```bash
 # -y は「すべて Yes」を意味し対話をスキップ
-npx -y github:StarBoze/codex-mcp --port 8130
+npx -y github:StarBoze/codex-mcp-wrapper --port 8130
 ```
 
 初回のみリポジトリを tarball で取得→キャッシュされるため２回目以降は高速
@@ -95,7 +95,7 @@ MCP 設定に組み込む例（Cursor）
       "command": "npx",
       "args": [
         "-y",
-        "github:StarBoze/codex-mcp",
+        "github:StarBoze/codex-mcp-wrapper",
         "--port", "8130"
       ],
       "tools": ["analyzeCode", "generateReadme", "suggestImprovements"]
