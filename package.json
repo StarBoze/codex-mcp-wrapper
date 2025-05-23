@@ -3,12 +3,16 @@
   "version": "0.4.0",
   "description": "MCP wrapper around Codex CLI with NestJS, BullMQ, WebSocket, JWT RBAC",
   "main": "dist/main.js",
+  "bin": {
+    "codex-mcp-wrapper": "dist/main.js"
+  },
   "scripts": {
     "start": "node dist/main.js",
     "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
     "start:prod": "npm run build && node dist/main.js",
     "build": "tsc -p tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

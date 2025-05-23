@@ -91,7 +91,7 @@ cd codex-mcp-wrapper
 
 ```bash
 # -y は「すべて Yes」を意味し対話をスキップ
-npx -y github:StarBoze/codex-mcp-wrapper --port 8130
+PORT=8130 npx -y github:StarBoze/codex-mcp-wrapper
 ```
 
 初回のみリポジトリを tarball で取得→キャッシュされるため２回目以降は高速
@@ -105,9 +105,9 @@ MCP 設定に組み込む例（Cursor）
       "command": "npx",
       "args": [
         "-y",
-        "github:StarBoze/codex-mcp-wrapper",
-        "--port", "8130"
+        "github:StarBoze/codex-mcp-wrapper"
       ],
+      "env": { "PORT": "8130" },
       "tools": ["analyzeCode", "generateReadme", "suggestImprovements"]
     }
   }
@@ -247,9 +247,9 @@ Cursorでこのサーバーを使用するには、`~/.cursor/mcp.json`ファイ
       "command": "npx",
       "args": [
         "-y",
-        "github:StarBoze/codex-mcp-wrapper",
-        "--port", "8130"
+        "github:StarBoze/codex-mcp-wrapper"
       ],
+      "env": { "PORT": "8130" },
       "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n", "feature_implementation", "api_migration", "microservice_decomposition", "performance_optimization", "saas_application_build", "legacy_system_modernization"]
     }
   }

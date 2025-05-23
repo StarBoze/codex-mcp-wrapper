@@ -62,10 +62,10 @@ Using an npm script
       "command": "npx",
       "args": [
         "-y",
-        "github:StarBoze/codex-mcp-wrapper",
-        "--port", "8130"
+        "github:StarBoze/codex-mcp-wrapper"
       ],
       "env": {
+        "PORT": "8130",
         "OPENAI_API_KEY": "sk-your-actual-api-key-here",
         "JWT_SECRET": "your-secret-key-minimum-32-chars",
         "STORAGE_DRIVER": "sqlite",
