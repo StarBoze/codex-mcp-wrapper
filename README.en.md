@@ -103,7 +103,7 @@ Example MCP config (Cursor)
         "github:StarBoze/codex-mcp-wrapper",
         "--port", "8130"
       ],
-      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n", "feature_implementation", "api_migration", "microservice_decomposition", "performance_optimization", "saas_application_build", "legacy_system_modernization"]
     }
   }
 }
@@ -169,7 +169,7 @@ To use this server with Cursor, edit your `~/.cursor/mcp.json` file:
         "github:StarBoze/codex-mcp-wrapper",
         "--port", "8130"
       ],
-      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n", "feature_implementation", "api_migration", "microservice_decomposition", "performance_optimization", "saas_application_build", "legacy_system_modernization"]
     }
   }
 }
@@ -188,13 +188,171 @@ If you already have the server running, you can configure it as follows:
         "-N", 
         "http://localhost:8123/mcp?sessionId={sessionId}"
       ],
-      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n", "feature_implementation", "api_migration", "microservice_decomposition", "performance_optimization", "saas_application_build", "legacy_system_modernization"]
     }
   }
 }
 ```
 
 Note: The `tools` section should specify the available tool names defined in the capabilities.json file as shown above.
+
+---
+
+## 🎯 Codex-1 Usage Examples: From Simple to Ultra-Advanced
+
+Examples of complex tasks you can delegate entirely to Codex-1, presented with progressive complexity.
+
+### 🚀 **Moderate Complexity**
+
+#### 1. **Full-Stack Feature Implementation**
+```bash
+# Tool: feature_implementation
+```
+
+**Example Instructions:**
+> "Add user authentication functionality. Use React frontend, Node.js backend, PostgreSQL database. Include JWT token authentication, password hashing, login/logout UI, session management, and comprehensive tests."
+
+**Expected Deliverables:**
+- Frontend: Login/signup components
+- Backend: Authentication API endpoints
+- Database: User table design
+- Security: JWT implementation, password hashing
+- Testing: Unit tests & integration tests
+
+#### 2. **API Migration**
+```bash
+# Tool: api_migration
+```
+
+**Example Instructions:**
+> "Migrate REST API to GraphQL. Convert all existing endpoints to GraphQL schema, implement resolvers, and create REST compatibility wrapper for existing clients."
+
+**Expected Deliverables:**
+- GraphQL schema definition
+- Resolver implementations
+- REST compatibility layer
+- Client migration guide
+
+### 🔥 **Advanced Complexity**
+
+#### 3. **Microservice Decomposition**
+```bash
+# Tool: microservice_decomposition
+```
+
+**Example Instructions:**
+> "Break down monolithic e-commerce app into 4 microservices:
+> 1. User Management Service
+> 2. Product Catalog Service  
+> 3. Order Processing Service
+> 4. Payment Service
+> 
+> Implement each service as independent Docker containers with gRPC communication, Redis shared cache, Kubernetes configuration files, integration tests, CI/CD pipelines, and API Gateway setup."
+
+**Expected Deliverables:**
+- 4 independent microservices
+- Docker & Kubernetes configurations
+- gRPC communication implementation
+- API Gateway setup
+- Integration test suite
+- CI/CD pipeline configuration
+
+#### 4. **Performance Optimization Project**
+```bash
+# Tool: performance_optimization
+```
+
+**Example Instructions:**
+> "Improve web application performance by 50%.
+> 
+> **Optimization Targets:**
+> - Database queries (N+1 problem resolution, index additions)
+> - Frontend (Code splitting, image optimization, caching strategy)
+> - Backend (Redis integration, connection pooling)
+> - Infrastructure (CDN setup, load balancing)
+> 
+> **Required Work:**
+> - Performance measurement tool implementation
+> - Bottleneck analysis and report generation
+> - Optimization implementation and benchmarking
+> - Monitoring dashboard creation"
+
+### 🌟 **Ultra-Advanced Complexity**
+
+#### 5. **Full-Stack SaaS Application Build**
+```bash
+# Tool: saas_application_build
+```
+
+**Example Instructions:**
+> "Build complete project management SaaS from scratch.
+> 
+> **Requirements:**
+> - Multi-tenant architecture
+> - 3 pricing tiers (Free/Pro/Enterprise)
+> - Real-time collaboration features
+> - Slack/GitHub/Jira integrations
+> - GDPR/SOC2 compliance
+> - Mobile PWA support
+> 
+> **Tech Stack:**
+> - Frontend: Next.js + TypeScript
+> - Backend: Node.js + GraphQL
+> - Database: PostgreSQL + Redis
+> - Infrastructure: AWS + Terraform
+> 
+> **Include:**
+> - Authentication & authorization system
+> - Payment processing (Stripe)
+> - Email notification system
+> - Monitoring & logging
+> - Automated testing (90% coverage)
+> - Documentation (API/User)
+> - Deployment pipeline"
+
+#### 6. **Legacy System Modernization**
+```bash
+# Tool: legacy_system_modernization
+```
+
+**Example Instructions:**
+> "Completely migrate 20-year-old VB.NET + SQL Server system to modern architecture.
+> 
+> **Current Analysis & Migration Plan:**
+> - Existing code analysis and business logic extraction
+> - Data structure analysis and normalization proposals
+> - Phased migration strategy planning
+> 
+> **New System Build:**
+> - React + .NET Core Web API
+> - PostgreSQL + Entity Framework
+> - Azure Container Apps deployment
+> - Lossless existing data migration
+> - Parallel operation synchronization
+> - User training materials creation
+> - Rollback plan"
+
+### 📝 **Effective Instruction Tips**
+
+#### ✅ **Specific and Detailed Instructions**
+- Clearly specify tech stack
+- List expected deliverables
+- Define quality standards (test coverage, performance targets)
+
+#### ✅ **Progressive Complexity Building**
+```
+1. "Add XX feature"
+2. "Add XX feature, considering YY"  
+3. "Add XX feature, considering YY, meeting ZZ quality standards"
+```
+
+#### ✅ **Clear Constraint Definition**
+- Security requirements
+- Performance requirements
+- Existing system compatibility
+- Budget & time constraints
+
+Codex-1 has the capability to understand and progressively implement these complex tasks. The key is providing clear and specific instructions.
 
 ---
 

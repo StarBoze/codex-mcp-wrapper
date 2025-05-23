@@ -110,6 +110,148 @@
         },
         "required": ["file", "to"]
       }
+    },
+    {
+      "name": "feature_implementation",
+      "description": "Add complete feature with frontend, backend, and tests",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "feature_name": { "type": "string", "description": "Feature to implement" },
+          "frontend_tech": { "type": "string", "description": "React/Vue/Angular" },
+          "backend_tech": { "type": "string", "description": "Node.js/Python/Go" },
+          "database": { "type": "string", "description": "PostgreSQL/MongoDB/MySQL" }
+        },
+        "required": ["feature_name", "frontend_tech", "backend_tech"]
+      }
+    },
+    {
+      "name": "api_migration",
+      "description": "Migrate API from one version/technology to another",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "source_api": { "type": "string", "description": "Current API technology" },
+          "target_api": { "type": "string", "description": "Target API technology" },
+          "preserve_compatibility": { "type": "boolean", "description": "Maintain backward compatibility" }
+        },
+        "required": ["source_api", "target_api"]
+      }
+    },
+    {
+      "name": "microservice_decomposition",
+      "description": "Break monolith into microservices",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "monolith_language": { "type": "string", "description": "Current monolith language" },
+          "target_services": { "type": "array", "items": { "type": "string" } },
+          "communication_pattern": { "type": "string", "description": "REST/gRPC/MessageQueue" },
+          "deployment_platform": { "type": "string", "description": "Docker/Kubernetes/Serverless" }
+        },
+        "required": ["monolith_language", "target_services"]
+      }
+    },
+    {
+      "name": "performance_optimization",
+      "description": "Comprehensive performance optimization",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "target_metrics": { "type": "object", "description": "Performance targets" },
+          "optimization_areas": { "type": "array", "items": { "type": "string" } },
+          "profiling_tools": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["target_metrics", "optimization_areas"]
+      }
+    },
+    {
+      "name": "saas_application_build",
+      "description": "Build complete SaaS application from scratch",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "app_domain": { "type": "string", "description": "Business domain" },
+          "user_tiers": { "type": "array", "items": { "type": "string" } },
+          "integrations": { "type": "array", "items": { "type": "string" } },
+          "compliance": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["app_domain", "user_tiers"]
+      }
+    },
+    {
+      "name": "legacy_system_modernization",
+      "description": "Complete modernization of legacy systems to contemporary architecture",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "legacy_stack": {
+            "type": "object",
+            "properties": {
+              "language": { "type": "string", "description": "Current programming language" },
+              "framework": { "type": "string", "description": "Current framework/platform" },
+              "database": { "type": "string", "description": "Current database system" },
+              "deployment": { "type": "string", "description": "Current deployment method" }
+            },
+            "required": ["language", "database"]
+          },
+          "target_stack": {
+            "type": "object",
+            "properties": {
+              "language": { "type": "string", "description": "Target programming language" },
+              "framework": { "type": "string", "description": "Target framework" },
+              "database": { "type": "string", "description": "Target database system" },
+              "cloud_platform": { "type": "string", "description": "AWS/Azure/GCP" },
+              "deployment_method": { "type": "string", "description": "Docker/Kubernetes/Serverless" }
+            },
+            "required": ["language", "framework", "database"]
+          },
+          "migration_strategy": {
+            "type": "string",
+            "enum": ["big_bang", "strangler_fig", "parallel_run", "phased_approach"],
+            "description": "Migration approach strategy"
+          },
+          "data_migration": {
+            "type": "object",
+            "properties": {
+              "volume_estimate": { "type": "string", "description": "Data volume (GB/TB)" },
+              "zero_downtime_required": { "type": "boolean", "description": "Zero downtime requirement" },
+              "data_transformation_needed": { "type": "boolean", "description": "Schema changes required" }
+            }
+          },
+          "business_requirements": {
+            "type": "object",
+            "properties": {
+              "maintain_functionality": { "type": "boolean", "description": "Keep all existing features" },
+              "performance_improvement": { "type": "number", "description": "Expected performance gain %" },
+              "new_features": { "type": "array", "items": { "type": "string" } },
+              "integration_requirements": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "compliance_security": {
+            "type": "object", 
+            "properties": {
+              "regulations": { "type": "array", "items": { "type": "string" } },
+              "security_standards": { "type": "array", "items": { "type": "string" } },
+              "audit_requirements": { "type": "boolean", "description": "Audit trail needed" }
+            }
+          },
+          "timeline_constraints": {
+            "type": "object",
+            "properties": {
+              "deadline": { "type": "string", "description": "Project deadline" },
+              "rollback_window": { "type": "string", "description": "Rollback capability period" },
+              "testing_duration": { "type": "string", "description": "Testing phase duration" }
+            }
+          },
+          "deliverables": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Expected deliverables and documentation"
+          }
+        },
+        "required": ["legacy_stack", "target_stack", "migration_strategy", "business_requirements"]
+      }
     }
   ]
 }
