@@ -48,7 +48,7 @@ export class McpService {
       }
       
       // Example of other MCP method handlers
-      if (message.method === 'listTools') {
+      if (message.method === 'tools/list' || message.method === 'listTools') {
         return this.handleListTools(message);
       }
       
