@@ -449,7 +449,7 @@ src/
     ws/              # WebSocket 実装
     rpc/             # RPC API 実装
   utils/             # ユーティリティ
-capabilities.json   # tools/list 用の定義
+capabilities.json   # listTools 用の定義
 Dockerfile           # Alpine Node ベース
 package.json         # 依存・スクリプト
 ```

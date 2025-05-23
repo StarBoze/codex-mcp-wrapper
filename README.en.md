@@ -367,7 +367,7 @@ src/
     ws/              # WebSocket server
     rpc/             # RPC API
   utils/             # utilities
-capabilities.json   # list of tools for `tools/list`
+capabilities.json   # list of tools for `listTools`
 Dockerfile           # Alpine Node base
 package.json         # dependencies & scripts
 ```
