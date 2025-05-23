@@ -27,6 +27,7 @@
 * **OPENAI_API_KEY** – API key for Codex
 * **JWT_SECRET** – secret used for JWT signing
 * **CAPABILITIES_FILE** – JSON file describing available tools
+* **RATE_LIMIT_RPM** – max requests per minute per agent (default 60)
 
 ### About storage
 Default backend is Redis but SQLite can be selected. Redis is used for:

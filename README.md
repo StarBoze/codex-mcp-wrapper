@@ -27,6 +27,7 @@
 
 * **OPENAI\_API\_KEY** – Codex 用 OpenAI キー
 * **JWT\_SECRET** – JWT 署名用シークレット（任意文字列）
+* **RATE_LIMIT_RPM** – 1 分あたりの最大リクエスト数 (デフォルト 60)
 
 ### ストレージについて
 デフォルトでは Redis を使用しますが、軽量な用途では SQLite も選択可能です。
