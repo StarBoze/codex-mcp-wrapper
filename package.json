@@ -1,0 +1,44 @@
+{
+  "name": "codex-mcp-wrapper",
+  "version": "0.4.0",
+  "description": "MCP wrapper around Codex CLI with NestJS, BullMQ, WebSocket, JWT RBAC",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "start:prod": "npm run build && node dist/main.js",
+    "build": "tsc -p tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-fastify": "^10.0.0",
+    "@nestjs/platform-socket.io": "^10.4.17",
+    "@nestjs/platform-ws": "^10.4.17",
+    "@nestjs/websockets": "^10.4.17",
+    "bullmq": "^4.15.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "dotenv": "^16.4.1",
+    "fastify": "^4.26.1",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.6",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^20.3.1",
+    "@types/socket.io": "^3.0.1",
+    "@types/sqlite3": "^3.1.11",
+    "@types/ws": "^8.5.8",
+    "jest": "^29.7.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.0"
+  }
+}

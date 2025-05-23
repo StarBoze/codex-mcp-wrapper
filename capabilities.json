@@ -1,0 +1,115 @@
+{
+  "tools": [
+    {
+      "name": "codex",
+      "description": "Execute Codex CLI commands",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "args": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Command line arguments for Codex CLI"
+          }
+        },
+        "required": ["args"]
+      }
+    },
+    {
+      "name": "bootstrap",
+      "description": "Generate project skeleton quickly",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "lang": { "type": "string", "description": "Programming language" },
+          "framework": { "type": "string", "description": "Framework name" }
+        },
+        "required": ["lang", "framework"]
+      }
+    },
+    {
+      "name": "diff",
+      "description": "Propose code patch based on goal",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file": { "type": "string", "description": "Target file" },
+          "goal": { "type": "string", "description": "Desired change" }
+        },
+        "required": ["file", "goal"]
+      }
+    },
+    {
+      "name": "testgen",
+      "description": "Generate unit tests automatically",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "Source path" }
+        },
+        "required": ["path"]
+      }
+    },
+    {
+      "name": "secure",
+      "description": "Scan and fix vulnerabilities",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file": { "type": "string", "description": "Target file" }
+        },
+        "required": ["file"]
+      }
+    },
+    {
+      "name": "sql-explain",
+      "description": "Explain SQL query and suggest indexes",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "SQL query" }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "migrate",
+      "description": "Generate migration scripts",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string", "description": "Source DB" },
+          "to": { "type": "string", "description": "Target DB" }
+        },
+        "required": ["from", "to"]
+      }
+    },
+    {
+      "name": "ci-opt",
+      "description": "Suggest optimizations for CI configuration",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file": { "type": "string", "description": "YAML file path" }
+        },
+        "required": ["file"]
+      }
+    },
+    {
+      "name": "i18n",
+      "description": "Translate and maintain localization files",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file": { "type": "string", "description": "Source JSON file" },
+          "to": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Target languages"
+          }
+        },
+        "required": ["file", "to"]
+      }
+    }
+  ]
+}
