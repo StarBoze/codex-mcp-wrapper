@@ -20,7 +20,9 @@ function loadConfig() {
     },
     redis: { url: process.env.REDIS_URL || 'redis://localhost:6379' },
     codex: { model: 'codex-1', apiKey: process.env.OPENAI_API_KEY },
-    rateLimit: { rpm: 60 },
+    rateLimit: {
+      rpm: parseInt(process.env.RATE_LIMIT_RPM || '60', 10)
+    },
     capabilitiesFile: process.env.CAPABILITIES_FILE || './capabilities.json'
   };
 }
