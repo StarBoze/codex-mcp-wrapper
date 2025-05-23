@@ -86,7 +86,7 @@ cd codex-mcp-wrapper
 
 ```bash
 # -y skips all prompts
-npx -y github:StarBoze/codex-mcp-wrapper --port 8130
+PORT=8130 npx -y github:StarBoze/codex-mcp-wrapper
 ```
 
 Only the first run fetches a tarball of the repo; subsequent launches are cached and faster.
@@ -100,9 +100,9 @@ Example MCP config (Cursor)
       "command": "npx",
       "args": [
         "-y",
-        "github:StarBoze/codex-mcp-wrapper",
-        "--port", "8130"
+        "github:StarBoze/codex-mcp-wrapper"
       ],
+      "env": { "PORT": "8130" },
       "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n", "feature_implementation", "api_migration", "microservice_decomposition", "performance_optimization", "saas_application_build", "legacy_system_modernization"]
     }
   }
@@ -166,9 +166,9 @@ To use this server with Cursor, edit your `~/.cursor/mcp.json` file:
       "command": "npx",
       "args": [
         "-y",
-        "github:StarBoze/codex-mcp-wrapper",
-        "--port", "8130"
+        "github:StarBoze/codex-mcp-wrapper"
       ],
+      "env": { "PORT": "8130" },
       "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n", "feature_implementation", "api_migration", "microservice_decomposition", "performance_optimization", "saas_application_build", "legacy_system_modernization"]
     }
   }
