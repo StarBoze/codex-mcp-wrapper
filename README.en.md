@@ -68,15 +68,15 @@ Default backend is Redis but SQLite can be selected. Redis is used for:
 
 ## 2. Get the source
 ```bash
-git clone https://github.com/StarBoze/codex-mcp.git
-cd codex-mcp
+git clone https://github.com/StarBoze/codex-mcp-wrapper.git
+cd codex-mcp-wrapper
 ```
 
 ### Launch via GitHub shorthand
 
 ```bash
 # -y skips all prompts
-npx -y github:StarBoze/codex-mcp --port 8130
+npx -y github:StarBoze/codex-mcp-wrapper --port 8130
 ```
 
 Only the first run fetches a tarball of the repo; subsequent launches are cached and faster.
@@ -90,7 +90,7 @@ Example MCP config (Cursor)
       "command": "npx",
       "args": [
         "-y",
-        "github:StarBoze/codex-mcp",
+        "github:StarBoze/codex-mcp-wrapper",
         "--port", "8130"
       ],
       "tools": ["analyzeCode", "generateReadme", "suggestImprovements"]
