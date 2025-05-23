@@ -3,6 +3,16 @@
 
 ---
 
+## 📌 クイックリンク
+
+| リンク | 説明 |
+| ----- | ---- |
+| [📘 Codex CLIインストールガイド](how_to_install_codex.md) | Codex CLIのインストール方法（前提条件） |
+| [🔧 MCP Server セットアップ](README.md#mcp-server-セットアップ) | MCP Serverの設定方法 |
+| [🚀 クイックスタート](README.md#2-ソース取得) | 素早く始める方法 |
+
+---
+
 ## 1. 前提環境
 
 | 要件        | バージョン              | 備考                             |
@@ -221,6 +231,51 @@ $ curl -X POST http://localhost:8123/mcp?sessionId=f47ac10b-58cc-4372-a567-0e02b
 ```
 
 SSE ストリームに実行結果がリアルタイムで流れてきます。
+
+## MCP Server セットアップ
+
+エディタやIDE（CursorやVSCode）などからこのMCPサーバーを利用するには、下記の設定が必要です。
+
+### Cursor用MCP設定
+
+Cursorでこのサーバーを使用するには、`~/.cursor/mcp.json`ファイルを編集します：
+
+```json
+{
+  "mcpServers": {
+    "codex-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "github:StarBoze/codex-mcp-wrapper",
+        "--port", "8130"
+      ],
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
+    }
+  }
+}
+```
+
+### 起動済みサーバーへの接続
+
+既にサーバーを起動済みの場合は、以下のように設定できます：
+
+```json
+{
+  "mcpServers": {
+    "codex-mcp": {
+      "command": "curl",
+      "args": [
+        "-N", 
+        "http://localhost:8123/mcp?sessionId={sessionId}"
+      ],
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
+    }
+  }
+}
+```
+
+※ `tools`セクションには上記のようにcapabilities.jsonファイルで定義されている利用可能なツール名を指定します。
 
 ---
 

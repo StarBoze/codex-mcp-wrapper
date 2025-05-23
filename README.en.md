@@ -2,6 +2,16 @@
 
 ---
 
+## 📌 Quick Links
+
+| Link | Description |
+| ---- | ----------- |
+| [📘 Codex CLI Installation Guide](how_to_install_codex_en.md) | How to install Codex CLI (prerequisite) |
+| [🔧 MCP Server Setup](README.en.md#mcp-server-setup) | How to configure MCP Server |
+| [🚀 Quick Start](README.en.md#2-get-the-source) | How to get started quickly |
+
+---
+
 ## 1. Prerequisites
 
 | Requirement | Version | Notes |
@@ -93,7 +103,7 @@ Example MCP config (Cursor)
         "github:StarBoze/codex-mcp-wrapper",
         "--port", "8130"
       ],
-      "tools": ["analyzeCode", "generateReadme", "suggestImprovements"]
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
     }
   }
 }
@@ -140,6 +150,51 @@ Follow the same steps as in the Japanese guide to obtain a wsId and call Generat
 
 ### MCP access
 Use the `/mcp` endpoint compatible with the MCP TypeScript SDK.
+
+## MCP Server Setup
+
+To use this MCP server with your editors or IDEs (Cursor or VSCode), you need the following configuration:
+
+### Cursor MCP Configuration
+
+To use this server with Cursor, edit your `~/.cursor/mcp.json` file:
+
+```json
+{
+  "mcpServers": {
+    "codex-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "github:StarBoze/codex-mcp-wrapper",
+        "--port", "8130"
+      ],
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
+    }
+  }
+}
+```
+
+### Connecting to an Already Running Server
+
+If you already have the server running, you can configure it as follows:
+
+```json
+{
+  "mcpServers": {
+    "codex-mcp": {
+      "command": "curl",
+      "args": [
+        "-N", 
+        "http://localhost:8123/mcp?sessionId={sessionId}"
+      ],
+      "tools": ["codex", "bootstrap", "diff", "testgen", "secure", "sql-explain", "migrate", "ci-opt", "i18n"]
+    }
+  }
+}
+```
+
+Note: The `tools` section should specify the available tool names defined in the capabilities.json file as shown above.
 
 ---
 
