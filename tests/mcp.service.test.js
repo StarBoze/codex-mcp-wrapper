@@ -10,8 +10,8 @@ const token = jwt.sign({ user: 'test' }, process.env.JWT_SECRET);
 
 const mcp = new McpService(new MockCodexService());
 
-test('listTools returns tool list', async () => {
-  const body = { method: 'listTools', params: {}, id: '123' };
+test('tools/list returns tool list', async () => {
+  const body = { method: 'tools/list', params: {}, id: '123' };
   const res = await mcp.processMessage('session', body, token);
   expect(res.tools[0].name).toBe('codex');
 });
