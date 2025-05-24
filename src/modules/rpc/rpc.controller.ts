@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get, Param } from '@nestjs/common';
 import { CodexService } from '../codex/codex.service';
 import { LimiterService } from '../rate-limit/limiter.service';
 
@@ -25,5 +25,11 @@ export class RpcController {
     await this.limiter.hit(key);
     const job = await this.codex.enqueue(method, { args: params.args, wsId: params.wsId });
     return { id, jobId: job.id };
+  }
+
+  @Get('job/:id')
+  async getJob(@Param('id') jobId: string) {
+    await this.limiter.hit('codex_job_lookup');
+    return await this.codex.getJob(jobId);
   }
 }

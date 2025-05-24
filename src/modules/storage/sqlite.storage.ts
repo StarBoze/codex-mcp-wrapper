@@ -183,4 +183,23 @@ export class SqliteStorage implements IStorage {
       throw error;
     }
   }
-} 
+
+  /**
+   * ジョブ情報を取得
+   */
+  async getJob(id: string) {
+    if (!this.db) {
+      throw new Error('SQLite database not initialized');
+    }
+
+    try {
+      return await this.db.get(
+        `SELECT id, type, data, status FROM jobs WHERE id = ?`,
+        id
+      );
+    } catch (error: any) {
+      this.logger.error(`Failed to get job ${id}: ${error.message}`, error.stack);
+      throw error;
+    }
+  }
+}
