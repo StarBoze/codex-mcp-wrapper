@@ -82,4 +82,30 @@ export class RedisStorage implements IStorage {
       throw new Error(`Rate limiting error: ${error.message}`);
     }
   }
-} 
+
+  /**
+   * BullMQからジョブの状態を取得
+   */
+  async getJob(id: string) {
+    try {
+      const job = await this.queue.getJob(id);
+      if (!job) return null;
+      const state = await job.getState();
+      let returnvalue: any;
+      try {
+        returnvalue = await job.getReturnValue();
+      } catch {
+        returnvalue = undefined;
+      }
+      return {
+        id: job.id?.toString(),
+        state,
+        data: job.data,
+        returnvalue,
+      };
+    } catch (error: any) {
+      this.logger.error(`Failed to get job '${id}': ${error.message}`, error.stack);
+      throw error;
+    }
+  }
+}

@@ -24,4 +24,11 @@ export interface IStorage {
    * @throws Error - レート制限を超えた場合
    */
   hitRate(key: string): Promise<void>;
-} 
+
+  /**
+   * 指定したジョブIDの情報を取得
+   * @param id - ジョブID
+   * @returns ジョブ情報、存在しない場合は null
+   */
+  getJob(id: string): Promise<any | null>;
+}

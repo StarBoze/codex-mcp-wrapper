@@ -24,4 +24,16 @@ export class CodexService {
       throw error;
     }
   }
+
+  /**
+   * ジョブ情報を取得
+   */
+  async getJob(id: string) {
+    try {
+      return await this.storage.getJob(id);
+    } catch (error: any) {
+      this.logger.error(`Failed to get job '${id}': ${error.message}`, error.stack);
+      throw error;
+    }
+  }
 }
